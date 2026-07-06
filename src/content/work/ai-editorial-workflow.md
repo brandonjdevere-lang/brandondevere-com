@@ -42,7 +42,7 @@ The system's job was never to make AI smarter. It was to stop having the same co
 
 The work that matters stays mine. I find the idea, record the episode, decide what the story is actually about.
 
-Once there's a transcript, AI writes the first structured draft, using the documented system instead of starting from nothing.
+Once there's a transcript, AI writes the first structured draft, using the documented system instead of starting from nothing. Day to day that's ChatGPT and Claude doing the writing and editing, and Claude Code as the environment where the documentation itself gets built, including this website.
 
 Then I edit. On one recent draft, the note I left looked like this: condense Tom's and Eric's stories, which had unspooled on the recording with a lot of "you know" and backtracking, and keep only the details that carry meaning. Reorder two ideas that came out in separate bursts on the recording but needed to sit together on the page. Cut a callback to a different episode a reader wouldn't have context for. Keep one line on purpose, "this isn't a pep talk," because it protects the piece from going motivational.
 
@@ -73,5 +73,7 @@ Learn For 2.0 has its own voice, its own editorial standards, its own thumbnail 
 ## What I Learned
 
 I don't build prompts anymore. I build systems, with documentation and shared context, that let AI become a better collaborator over time.
+
+The system is still evolving. The hardest part today isn't writing better prompts, it's deciding what belongs in permanent documentation and what just belongs in the conversation. Every project teaches me something new, and I'm still figuring out how much context AI actually needs to become a better collaborator without the documentation turning into its own kind of complexity.
 
 The documentation was never there to preserve old thinking. It's there to capture better thinking as it emerges, so I only have to learn something once.
