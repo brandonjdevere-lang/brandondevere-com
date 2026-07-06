@@ -18,7 +18,7 @@ const { title, description = 'Brandon DeVere — stories and systems for underst
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} · Brandon DeVere</title>
+		<title>{title.includes('Brandon DeVere') ? title : `${title} · Brandon DeVere`}</title>
 	</head>
 	<body>
 		<Nav />
