@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('writing')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Writing">
+	<section class="container section">
+		<h1>Writing</h1>
+		{entries.length === 0 && <p>No essays published yet.</p>}
+		<ul class="entry-list">
+			{entries.map((entry) => (
+				<li>
+					<a href={`/writing/${entry.id}`}>
+						<h2>{entry.data.title}</h2>
+						<p>{entry.data.summary}</p>
+					</a>
+				</li>
+			))}
+		</ul>
+	</section>
+</BaseLayout>
+
+<style>
+	.entry-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xl);
+	}
+
+	.entry-list a {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+</style>

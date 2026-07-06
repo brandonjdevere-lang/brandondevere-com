@@ -1,0 +1,65 @@
+@import '@fontsource/source-serif-4/400.css';
+@import '@fontsource/source-serif-4/600.css';
+@import '@fontsource-variable/inter';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	color-scheme: light;
+}
+
+body {
+	margin: 0;
+	background: var(--color-paper);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	font-size: var(--text-body);
+	line-height: var(--leading-body);
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-serif);
+	line-height: var(--leading-heading);
+	font-weight: 600;
+	margin: 0 0 var(--space-sm);
+}
+
+p {
+	margin: 0 0 var(--space-md);
+	max-width: var(--measure);
+}
+
+a {
+	color: var(--color-accent);
+}
+
+a:hover {
+	opacity: 0.75;
+}
+
+.meta {
+	font-family: var(--font-mono);
+	font-size: 0.8125rem;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: var(--color-ink-muted);
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 var(--space-md);
+}
+
+.section {
+	padding-block: var(--section-gap);
+}
