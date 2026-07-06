@@ -1,10 +1,221 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const experience = [
+	{
+		company: 'simpliHŌM',
+		title: 'Growth Partner, Nevada Expansion',
+		dates: 'December 2024 – Present',
+		bullets: [
+			'Helped launch simpliHŌM’s presence in Nevada, growing the organization to 172 agents through recruiting, strategy, and agent support',
+			'Building long-term revenue share and supporting brokerage growth as a strategic growth partner',
+		],
+	},
+	{
+		company: 'Epique Realty',
+		title: 'Director of Operations & Team Growth, Martinez Group',
+		dates: 'February 2024 – December 2024',
+		bullets: [
+			'Led operations, recruiting, onboarding, and growth initiatives for the Martinez Group',
+			'Grew the organization to 137 agents while building onboarding and recruiting workflows',
+			'Served as Co-Chair of Epique Realty’s Agent Advisory Council',
+		],
+	},
+	{
+		company: 'eXp Realty',
+		title: 'Real Estate Agent / Growth Leader',
+		dates: 'November 2017 – February 2024',
+		bullets: [
+			'Built one of the top recruiting organizations within eXp Realty while continuing to serve real estate clients',
+			'Grew the organization to 606 real estate agents through attraction, coaching, training, and systems development',
+			'Developed AI- and video-driven recruiting systems that attracted agents at scale',
+		],
+	},
+	{
+		company: 'Agency One Real Estate',
+		title: 'Realtor',
+		dates: '2009 – November 2017',
+		bullets: [
+			'Represented both buyers and sellers while building an independent real estate practice, closing 113 transactions',
+			'As the business grew, began coaching and mentoring other agents on sales, systems, and business development',
+			'Started building the recruiting, coaching, and operational systems later expanded at eXp Realty, Epique Realty, and simpliHŌM',
+		],
+	},
+	{
+		company: 'Luxury Hospitality',
+		title: 'Food Server / Concierge',
+		dates: '2005 – 2014 (concurrent with early real estate career from 2009 onward)',
+		bullets: [
+			'Four Seasons Hotel Las Vegas — Food Server (2005–2009)',
+			'Banquet server, Hyatt / Westin / Marriott (Bellevue, WA) — provided stable income while building a real estate business (from 2009)',
+			'ARIA Resort & Casino — Concierge / Convention Concierge (2012–2014)',
+		],
+	},
+];
+
+const projects = [
+	{
+		company: 'brandondevere.com',
+		title: 'Designer & Builder',
+		dates: '2026 – Present',
+		bullets: [
+			'Designed and built end to end: architecture, design system, and content strategy, documented before any code was written',
+		],
+	},
+	{
+		company: 'Learn For 2.0',
+		title: 'Creator & Host',
+		dates: 'July 2019 – Present (editorial process and AI workflow fully redesigned June 2026)',
+		bullets: [
+			'Redesigned the editorial process from ad hoc prompting into a documented system governing voice, thumbnail strategy, and multi-platform distribution',
+			'Built and maintain the full production pipeline: transcript to structured draft, editorial revision, and platform-specific distribution across YouTube, blog, and social',
+		],
+	},
+];
+
+const skills = [
+	'Operations & Systems Design',
+	'AI Workflow Design (ChatGPT, Claude, Claude Code)',
+	'Recruiting & Team Growth',
+	'Process Documentation & Knowledge Management',
+	'Coaching & Training',
+	'Content Strategy & Editorial Workflows',
+	'Cross-Functional Leadership',
+	'Real Estate Sales & Business Development',
+];
 ---
 
-<BaseLayout title="Resume">
-	<section class="container section">
-		<h1>Resume</h1>
-		<p>Foundation placeholder — scannable resume + PDF download comes in Phase 7.</p>
+<BaseLayout title="Resume" description="Brandon DeVere's resume: operations, growth leadership, AI workflow design.">
+	<section class="container section resume">
+		<header class="resume-header">
+			<h1>Brandon DeVere</h1>
+			<p class="headline">Operations &amp; Growth Leader | AI Workflow Designer | Storytelling &amp; Systems Thinker</p>
+			<ul class="contact">
+				<li>Las Vegas, NV</li>
+				<li><a href="tel:+17022373166">702-237-3166</a></li>
+				<li><a href="mailto:brandon@brandondevere.com">brandon@brandondevere.com</a></li>
+				<li><a href="https://www.linkedin.com/in/brandondevere/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+			</ul>
+			<div class="downloads">
+				<a class="download" href="/brandon-devere-resume.pdf" download>Download PDF</a>
+				<a class="download" href="/brandon-devere-resume-ats.txt" download>Download ATS-friendly text</a>
+			</div>
+		</header>
+
+		<p class="summary">Built and led recruiting organizations totaling more than 900 real estate agents across multiple brokerages, states, and countries.</p>
+
+		<h2>Professional Experience</h2>
+		{experience.map((job) => (
+			<article class="job">
+				<div class="job-heading">
+					<h3>{job.company} — {job.title}</h3>
+					<p class="meta">{job.dates}</p>
+				</div>
+				<ul>
+					{job.bullets.map((bullet) => <li>{bullet}</li>)}
+				</ul>
+			</article>
+		))}
+
+		<h2>Independent Projects</h2>
+		{projects.map((job) => (
+			<article class="job">
+				<div class="job-heading">
+					<h3>{job.company} — {job.title}</h3>
+					<p class="meta">{job.dates}</p>
+				</div>
+				<ul>
+					{job.bullets.map((bullet) => <li>{bullet}</li>)}
+				</ul>
+			</article>
+		))}
+
+		<h2>Skills</h2>
+		<p>{skills.join(' · ')}</p>
+
+		<h2>Education &amp; Certifications</h2>
+		<p>Coursework: Highline Community College, Bellevue College, College of Southern Nevada</p>
+		<p>Certifications: Nevada Real Estate License · Military Relocation Professional (MRP)</p>
 	</section>
 </BaseLayout>
+
+<style>
+	.resume-header {
+		margin-bottom: var(--space-lg);
+	}
+
+	.resume-header h1 {
+		margin-bottom: var(--space-xs);
+	}
+
+	.headline {
+		font-family: var(--font-mono);
+		font-size: 0.875rem;
+		letter-spacing: 0.02em;
+		color: var(--color-ink-muted);
+		margin-bottom: var(--space-sm);
+	}
+
+	.contact {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 0;
+		list-style: none;
+		margin: 0 0 var(--space-sm);
+		padding: 0;
+	}
+
+	.contact li:not(:last-child)::after {
+		content: '·';
+		margin: 0 0.5rem;
+		color: var(--color-ink-muted);
+	}
+
+	.downloads {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-sm);
+	}
+
+	.download {
+		display: inline-block;
+		border: 1px solid var(--color-border);
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+		text-decoration: none;
+		color: var(--color-ink);
+	}
+
+	.download:hover {
+		border-color: var(--color-accent);
+		color: var(--color-accent);
+		opacity: 1;
+	}
+
+	.summary {
+		font-size: 1.125rem;
+	}
+
+	.job {
+		margin-bottom: var(--space-lg);
+	}
+
+	.job-heading h3 {
+		margin-bottom: 0.125rem;
+		font-size: 1.125rem;
+	}
+
+	.job-heading .meta {
+		margin-bottom: var(--space-sm);
+	}
+
+	.job ul {
+		margin: 0;
+		padding-left: 1.25rem;
+	}
+
+	.job li {
+		margin-bottom: 0.5rem;
+		max-width: var(--measure);
+	}
+</style>
