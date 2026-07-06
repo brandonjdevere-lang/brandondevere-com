@@ -29,8 +29,10 @@ const links = [
 
 	.nav-inner {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+		gap: var(--space-sm) var(--space-lg);
 		padding-block: var(--space-md);
 	}
 
@@ -39,11 +41,13 @@ const links = [
 		font-weight: 600;
 		color: var(--color-ink);
 		text-decoration: none;
+		white-space: nowrap;
 	}
 
 	nav ul {
 		display: flex;
-		gap: var(--space-lg);
+		flex-wrap: wrap;
+		gap: var(--space-sm) var(--space-md);
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -53,10 +57,17 @@ const links = [
 		color: var(--color-ink);
 		text-decoration: none;
 		font-size: 0.9375rem;
+		white-space: nowrap;
 	}
 
 	nav a:hover {
 		color: var(--color-accent);
 		opacity: 1;
+	}
+
+	@media (min-width: 640px) {
+		nav ul {
+			gap: var(--space-lg);
+		}
 	}
 </style>
