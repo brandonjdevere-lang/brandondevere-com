@@ -1,10 +1,96 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const problems = [
+	{
+		label: 'clarity',
+		line: 'A good idea nobody can explain well enough for anyone to use it.',
+	},
+	{
+		label: 'systems',
+		line: "A process that only works because it's stuck in one person's head.",
+	},
+	{
+		label: 'communication',
+		line: "Someone excellent at their work who's terrible at describing why.",
+	},
+];
 ---
 
-<BaseLayout title="Home">
-	<section class="container section">
-		<h1>Brandon DeVere</h1>
-		<p>Foundation placeholder — homepage copy comes in Phase 3.</p>
+<BaseLayout title="Home" description="Brandon DeVere builds stories and systems that help people understand complicated things well enough to actually use them.">
+	<section class="container section home">
+		<div class="hero">
+			<h1>I build stories and systems that help people understand complicated things well enough to actually use them.</h1>
+			<p class="subhead">AI is one of the tools I use to do that. It isn't the point.</p>
+			<p>
+				Most of my career has looked like different jobs: hospitality, real estate, recruiting, podcasting.
+				Underneath, it's been the same work, taking something complicated and making it usable, then documenting
+				it well enough that it doesn't have to be re-explained every time. The clearest proof of that is below.
+			</p>
+		</div>
+
+		<ul class="problems">
+			{problems.map((p) => (
+				<li>
+					<p class="meta">{p.label}</p>
+					<p>{p.line}</p>
+				</li>
+			))}
+		</ul>
+
+		<div class="next">
+			<p>
+				The <a href="/work/ai-editorial-workflow">AI Editorial Workflow</a> case study is the clearest example of
+				how this plays out: the actual problem, what I tried, what I got wrong, and what I'd change next time.
+				AI shows up in it, but it's not really what the case study is about.
+			</p>
+			<p>
+				Curious how hospitality, real estate, recruiting, and podcasting all led to the same place?
+				That's the <a href="/about">About</a> page.
+			</p>
+			<p>
+				If you just want the facts, the <a href="/resume">Resume</a> has them.
+			</p>
+		</div>
 	</section>
 </BaseLayout>
+
+<style>
+	.hero h1 {
+		max-width: 20ch;
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+	}
+
+	.subhead {
+		color: var(--color-ink-muted);
+		font-size: 1.125rem;
+	}
+
+	.problems {
+		list-style: none;
+		margin: var(--space-2xl) 0 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-lg);
+	}
+
+	.problems li p:last-child {
+		max-width: none;
+	}
+
+	@media (max-width: 768px) {
+		.problems {
+			grid-template-columns: 1fr;
+			gap: var(--space-md);
+		}
+	}
+
+	.next {
+		margin-top: var(--space-2xl);
+	}
+
+	.next p {
+		margin-bottom: var(--space-md);
+	}
+</style>
