@@ -7,8 +7,8 @@ const experience = [
 		title: 'Growth Partner, Nevada Expansion',
 		dates: 'December 2024 – Present',
 		bullets: [
-			'Helped launch simpliHŌM’s presence in Nevada, growing the organization to 172 agents through recruiting, strategy, and agent support',
-			'Building long-term revenue share and supporting brokerage growth as a strategic growth partner',
+			'Helped launch simpliHŌM’s presence in Nevada, growing a portfolio of 172 agent-partners through recruiting, strategy, and partner support',
+			'Advise a growing portfolio of agent-partners on revenue share strategy, helping drive retention and growth across the Nevada market',
 		],
 	},
 	{
@@ -17,7 +17,8 @@ const experience = [
 		dates: 'March 2023 – December 2024',
 		bullets: [
 			'Led operations, recruiting, onboarding, and growth initiatives for the Martinez Group',
-			'Grew the organization to 137 agents while building onboarding and recruiting workflows',
+			'Grew the organization to 137 agent-partners while building onboarding and recruiting workflows',
+			'Built an interactive, choose-your-own-adventure onboarding website (GoHighLevel) that let prospective and new agent-partners explore brokerage information on their own terms, reducing repetitive one-on-one conversations and creating a consistent partner education experience',
 			'Served as Co-Chair of Epique Realty’s Agent Advisory Council',
 		],
 	},
@@ -36,7 +37,7 @@ const experience = [
 		title: 'Realtor',
 		dates: '2005 – November 2017',
 		bullets: [
-			'Represented both buyers and sellers while building an independent real estate practice, closing 113 transactions',
+			'Represented both buyers and sellers, negotiating and closing 113 real estate transactions while building an independent practice',
 			'As the business grew, began coaching and mentoring other agents on sales, systems, and business development',
 			'Started building the recruiting, coaching, and operational systems later expanded at eXp Realty, Epique Realty, and simpliHŌM',
 		],
@@ -46,9 +47,10 @@ const experience = [
 		title: 'Food Server / Concierge',
 		dates: '2005 – 2014 (concurrent with real estate career from 2005 onward)',
 		bullets: [
-			'Four Seasons Hotel Las Vegas — Food Server (2005–2009)',
-			'Banquet server, Hyatt / Westin / Marriott (Bellevue, WA) — provided stable income while building a real estate business (from 2009)',
-			'ARIA Resort & Casino — Concierge / Convention Concierge (2012–2014)',
+			'Four Seasons Hotel Las Vegas, Food Server (2005–2009)',
+			'Banquet server, Hyatt / Westin / Marriott (Bellevue, WA), provided stable income while building a real estate business (from 2009)',
+			'ARIA Resort & Casino, Concierge / Convention Concierge (2012–2014)',
+			'As Convention Concierge, served as the point of contact for convention attendees and group business, coordinating requests across hotel departments and building rapport with event organizers and repeat guests to deliver a consistent, high-touch experience',
 		],
 	},
 ];
@@ -74,14 +76,15 @@ const projects = [
 ];
 
 const skills = [
-	'Operations & Systems Design',
-	'AI Workflow Design (ChatGPT, Claude, Claude Code)',
-	'Recruiting & Team Growth',
-	'Process Documentation & Knowledge Management',
-	'Coaching & Training',
-	'Content Strategy & Editorial Workflows',
-	'Cross-Functional Leadership',
-	'Real Estate Sales & Business Development',
+	'Partner Relationship Management',
+	'Business Development',
+	'Account Management',
+	'Contract Negotiation',
+	'Revenue Growth Strategy',
+	'Business Performance Analysis',
+	'Cross-Functional Collaboration',
+	'Hospitality & Guest Relations',
+	'Local Market Expertise (Las Vegas)',
 ];
 ---
 
@@ -89,7 +92,7 @@ const skills = [
 	<section class="container section resume">
 		<header class="resume-header">
 			<h1>Brandon DeVere</h1>
-			<p class="headline">Operations &amp; Growth Leader | AI Workflow Designer | Storytelling &amp; Systems Thinker</p>
+			<p class="headline">Business Development &amp; Partner Success | Account Management &amp; Operations | Hospitality Professional</p>
 			<ul class="contact">
 				<li>Las Vegas, NV</li>
 				<li><a href="tel:+17022373166">702-237-3166</a></li>
@@ -102,13 +105,13 @@ const skills = [
 			</div>
 		</header>
 
-		<p class="summary">Built and led recruiting organizations totaling more than 900 real estate agents across multiple brokerages, states, and countries.</p>
+		<p class="summary">Business development and partner relationship professional with 20+ years building trust and growing accounts across the Las Vegas market, from guest and convention relationships at Four Seasons and ARIA Resort to leading recruiting, onboarding, and account growth for real estate organizations that scaled to more than 900 partner accounts. Skilled in relationship management, contract negotiation, and building the repeatable systems that turn one relationship into scalable growth.</p>
 
 		<h2>Professional Experience</h2>
 		{experience.map((job) => (
 			<article class="job">
 				<div class="job-heading">
-					<h3>{job.company} — {job.title}</h3>
+					<h3>{job.company}, {job.title}</h3>
 					<p class="meta">{job.dates}</p>
 				</div>
 				<ul>
@@ -121,7 +124,7 @@ const skills = [
 		{projects.map((job) => (
 			<article class="job">
 				<div class="job-heading">
-					<h3>{job.company} — {job.title}</h3>
+					<h3>{job.company}, {job.title}</h3>
 					<p class="meta">{job.dates}</p>
 				</div>
 				<ul>
