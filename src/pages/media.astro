@@ -1,0 +1,741 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Featured work, grouped by capability rather than by show so new sections
+// (e.g. local/community storytelling) can be added without restructuring.
+const featured = [
+	{
+		id: 'interviewing',
+		capability: 'Interviewing',
+		title: "From Single Mom to Real Estate Leader | Lisa Harris' 24-Year Journey",
+		source: 'simpliSpeaking · 2026',
+		video: 'QYPwJ8xjCLw',
+		body: [
+			'A long-form conversation about single motherhood, building a career, leadership, and mentorship. The job was to prepare well, listen closely, and follow the story where Lisa took it.',
+		],
+		watch: [
+			'Follow-up questions built from what she says',
+			'Pacing that gives the story room',
+			'Two-person video podcast production',
+		],
+		role: 'Host & Producer',
+	},
+	{
+		id: 'solo-storytelling',
+		capability: 'Solo Storytelling',
+		title: 'The Woman in the Van',
+		source: 'Learn For 2.0 · Episode 002',
+		video: 'L_3kdkKPOBQ',
+		body: [
+			'It starts at a Costco gas pump, with a woman stretching the hose around her car and my quick judgment about why. Two words from a friend change how I read that moment, and a string of moments after it. An ordinary observation built into a story with a hook, a turn, and a payoff.',
+		],
+		watch: [
+			'It opens in a concrete moment, not a thesis',
+			'The turn comes through someone else’s words',
+			'The lesson lands without preaching',
+		],
+		role: 'Creator, Host & Producer',
+	},
+	{
+		id: 'video-production',
+		capability: 'Video Production',
+		title: 'How Everyday Agents Can Build Revenue Share Without Recruiting Experience',
+		source: 'Agent Attraction Lab · June 2025',
+		video: 'jg25CC2nukw',
+		body: [
+			'A multi-camera solo production I created and recorded in my home studio, using two cameras (an iPhone 14 and a Logitech MX Brio) for two distinct compositions: a tight direct-to-camera host shot and a wide shot of the full set, including the desk and microphone, lighting, practical lights, and plants.',
+			'Moving between the two angles gives an 11-minute solo episode visual variety and steady pacing. Post-production was handled by an outside editor.',
+		],
+		watch: [
+			'How each frame is composed',
+			'The balance between key light and practical lights',
+			'How two angles keep a single host visually engaging',
+		],
+		role: 'Creator, Host & Producer',
+	},
+];
+
+const flow = [
+	'Recording',
+	'Video episode',
+	'Transcript & captions',
+	'Written story',
+	'YouTube & Spotify copy',
+	'Short-form clips',
+	'Social posts',
+	'Thumbnail',
+];
+
+const credits = [
+	{ show: 'simpliSpeaking', role: 'Host & Producer', dates: '2026 - Present' },
+	{ show: 'Learn For 2 / Learn For 2.0', role: 'Creator, Host & Producer', dates: '2019 - 2020; Relaunched 2026', note: 'Approximately 275 episodes in the original run' },
+	{ show: 'Agent Attraction Lab', role: 'Creator, Host & Producer', dates: '2025' },
+	{ show: 'My Epique Journey / The Journey', role: 'Creator, Host & Producer', dates: '2024 - 2025', note: '100+ episodes' },
+	{ show: 'Authentic Agent Resource', role: 'Creator, Host & Producer', dates: '2022' },
+	{ show: 'Summerlin Advice Givers', role: 'Creator, Host & Producer', dates: '2016 - 2017', note: '36 episodes' },
+];
+
+const tools = ['Pro Tools', 'Descript', 'Riverside', 'StreamYard', 'Zoom', 'OBS', 'InShot', 'Vizard', 'Canva', 'Spotify for Creators', 'Podbean'];
+const equipment = ['Shure and Audio-Technica ATR2100 microphones', 'Zoom H4n recorder', 'DJI wireless lavaliers', 'Logitech MX Brio', 'iPhone video'];
+
+const resumePdf = '/brandon-devere-media-resume.pdf';
+---
+
+<BaseLayout
+	title="Media"
+	description="Podcast producer, host, and interviewer with 400+ recorded episodes. Selected work in interviewing, solo storytelling, video production, and content systems."
+>
+	<div class="container media">
+		<header class="hero">
+			<p class="meta">Media</p>
+			<h1>Podcast Producer <span class="sep">|</span> Host &amp; Interviewer <span class="sep">|</span> Content Producer</h1>
+			<p class="lede">400+ recorded episodes since 2016, across interview shows, solo storytelling, documentary-style series, and video. I handle the whole process: finding and preparing guests, hosting, recording, editing, and turning each recording into the formats people watch and read.</p>
+			<ul class="proof">
+				<li>400+ episodes</li>
+				<li>Interview and solo formats</li>
+				<li>Audio and video production</li>
+				<li>Trained at The Recording Workshop</li>
+			</ul>
+			<div class="actions">
+				<a class="button primary" href={resumePdf} download>Download Resume</a>
+				<a class="button" href="#contact">Contact</a>
+			</div>
+		</header>
+
+		{featured.map((item) => (
+			<section class="feature" id={item.id}>
+				<p class="meta capability">{item.capability}</p>
+				<div class="feature-grid">
+					<div class="video">
+						<button class="yt" type="button" data-id={item.video} aria-label={`Play: ${item.title}`}>
+							<img src={`https://i.ytimg.com/vi/${item.video}/hqdefault.jpg`} alt="" loading="lazy" width="480" height="360" />
+							<span class="play" aria-hidden="true"></span>
+						</button>
+						<a class="yt-link" href={`https://youtu.be/${item.video}`} target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+					</div>
+					<div class="feature-text">
+						<h2>{item.title}</h2>
+						<p class="source">{item.source}</p>
+						{item.body.map((p) => <p>{p}</p>)}
+						<p class="label">What to watch for</p>
+						<ul class="watch">
+							{item.watch.map((w) => <li>{w}</li>)}
+						</ul>
+						<p class="role"><span>Role</span> {item.role}</p>
+					</div>
+				</div>
+			</section>
+		))}
+
+		<section class="feature system" id="production-system">
+			<p class="meta capability">Production System</p>
+			<h2 class="system-title">One Recording, Many Finished Pieces</h2>
+			<p>Recording is where the work starts, not where it ends. This is the system behind Learn For 2.0, shown through one episode, “Nobody Shows You the Reps.” One long-form recording becomes a published video, a transcript and captions, a written story, copy for each platform, social posts, and a thumbnail built around the story.</p>
+
+			<ol class="flow">
+				{flow.map((step) => <li>{step}</li>)}
+			</ol>
+
+			<blockquote class="pull">
+				<p>“There’s way more post-production. I’m creating video along with the audio. Where am I putting it, where can people find it, what are my descriptions, what posts am I writing.”</p>
+				<cite>From the episode</cite>
+			</blockquote>
+
+			<div class="tiles">
+				<figure class="tile">
+					<p class="meta">01 · The episode</p>
+					<button class="yt" type="button" data-id="kq82bnNEzTk" aria-label="Play: Nobody Shows You the Reps">
+						<img src="https://i.ytimg.com/vi/kq82bnNEzTk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" />
+						<span class="play" aria-hidden="true"></span>
+					</button>
+					<figcaption>The source: one solo recording, about 15 minutes.</figcaption>
+				</figure>
+
+				<figure class="tile">
+					<p class="meta">02 · Transcript to story</p>
+					<div class="pair">
+						<div class="artifact">
+							<p class="artifact-label">Transcript</p>
+							<p>“And it’s just because he’s done it so many times. He’s had so many reps. All these YouTube videos show you how to do it, but they don’t show you the times he had to make a cut because something got in the way.”</p>
+						</div>
+						<div class="artifact serif">
+							<p class="artifact-label">Written story</p>
+							<p><strong>Nobody Shows You the Reps</strong></p>
+							<p>The mechanic was done in two and a half hours.</p>
+							<p>I came out to the garage half expecting him to still be setting up. He was packing his tools.</p>
+						</div>
+					</div>
+					<figcaption>The written version isn’t a cleaned-up transcript. It’s restructured for a reader, with the spoken detours tightened and the story organized into sections.</figcaption>
+				</figure>
+
+				<figure class="tile">
+					<p class="meta">03 · Title decision</p>
+					<div class="artifact">
+						<ul class="options">
+							<li><span>Click-through</span> He Fixed in Two Hours What Would’ve Taken Me Weeks</li>
+							<li class="chosen"><span>Brand</span> Nobody Shows You the Reps</li>
+							<li><span>Search</span> The 10,000-Hour Rule and Why You’re Not Good at It Yet</li>
+						</ul>
+					</div>
+					<figcaption>Title options are written for different goals, each with its reasoning. This one shipped with the brand title.</figcaption>
+				</figure>
+
+				<figure class="tile">
+					<p class="meta">04 · Description &amp; chapters</p>
+					<div class="artifact small">
+						<p>My alternator went out, and I spent an evening convincing myself I could fix it off a couple of YouTube videos. Then I watched a couple more and decided I definitely couldn’t.</p>
+						<ul class="chapters">
+							<li><span>0:00</span> A job that took two and a half hours</li>
+							<li><span>3:20</span> The golf story: get out of your head</li>
+							<li><span>5:24</span> The alternator and the YouTube rabbit hole</li>
+							<li><span>6:50</span> Done already? The mechanic finishes</li>
+							<li><span>10:27</span> Going back to episode 173</li>
+							<li><span>11:30</span> The 173rd at-bat</li>
+						</ul>
+					</div>
+					<figcaption>Chapters make a long-form episode easy to navigate.</figcaption>
+				</figure>
+
+				<figure class="tile">
+					<p class="meta">05 · Same story, different platforms</p>
+					<div class="pair">
+						<div class="artifact small">
+							<p class="artifact-label">YouTube Community</p>
+							<p>The mechanic was done in two and a half hours.</p>
+							<p>He’d worked on Toyotas for 41 years.</p>
+							<p>New episode is about that gap. Not talent. Reps.</p>
+						</div>
+						<div class="artifact small">
+							<p class="artifact-label">LinkedIn</p>
+							<p>I almost fixed my own alternator off a couple of YouTube videos. Then I hired a mechanic who’d been doing it for 41 years.</p>
+							<p>I’ve been thinking about that gap ever since, because it shows up everywhere.</p>
+						</div>
+					</div>
+					<figcaption>Each platform gets its own version, not a copy-paste.</figcaption>
+				</figure>
+
+				<figure class="tile">
+					<p class="meta">06 · Thumbnail</p>
+					<div class="thumbs">
+						<div class="candidates">
+							<img src="/media/reps-still-24.jpg" alt="Video still of Brandon in the studio" loading="lazy" width="640" height="360" />
+							<img src="/media/reps-still-14.jpg" alt="Video still of Brandon gesturing mid-sentence" loading="lazy" width="640" height="360" />
+							<img src="/media/reps-still-02.jpg" alt="Video still of Brandon early in the episode" loading="lazy" width="640" height="360" />
+						</div>
+						<span class="arrow" aria-hidden="true">→</span>
+						<img class="final" src="https://i.ytimg.com/vi/kq82bnNEzTk/maxresdefault.jpg" alt="Final thumbnail: 173rd Attempt." loading="lazy" width="1280" height="720" />
+					</div>
+					<figcaption>Every candidate frame was a talking-head shot, and the documented priority order ranks a portrait last. So the final thumbnail leads with the episode’s turn instead: the 173rd attempt.</figcaption>
+				</figure>
+			</div>
+
+			<p class="system-link"><a href="/work/ai-editorial-workflow">How the system was built: AI Editorial Workflow case study →</a></p>
+		</section>
+
+		<section class="feature credits" id="credits">
+			<p class="meta capability">Credits &amp; Training</p>
+			<div class="credits-grid">
+				<div>
+					<h3>Shows</h3>
+					<ul class="credit-list">
+						{credits.map((c) => (
+							<li>
+								<strong>{c.show}</strong>
+								<span>{c.role} · {c.dates}</span>
+								{c.note && <span class="note">{c.note}</span>}
+							</li>
+						))}
+					</ul>
+					<p class="total">400+ episodes across these shows and other projects.</p>
+				</div>
+				<div>
+					<h3>Training</h3>
+					<p>Certificate, Audio Engineering &amp; Recording, The Recording Workshop (2002)</p>
+					<p>Recording Studio Intern, Digital Insight Recording Studios (Las Vegas) and Synergy Productions (Redmond, WA)</p>
+					<h3>Tools <span class="aside">(hands-on)</span></h3>
+					<p>{tools.join(', ')}</p>
+					<h3>Equipment</h3>
+					<p>{equipment.join(', ')}</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="feature contact" id="contact">
+			<p class="meta capability">Contact</p>
+			<p class="contact-line">Based in Las Vegas. Open to staff, contract, and freelance opportunities in podcasting, video, content production, storytelling, and related media roles. Remote and Las Vegas-based opportunities welcome.</p>
+			<div class="actions">
+				<a class="button primary" href="mailto:brandon@brandondevere.com">brandon@brandondevere.com</a>
+				<a class="button" href="https://www.linkedin.com/in/brandondevere/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+				<a class="button" href={resumePdf} download>Download Resume</a>
+			</div>
+		</section>
+	</div>
+</BaseLayout>
+
+<script>
+	// Click-to-load YouTube: nothing from YouTube's player loads until a visitor presses play.
+	document.querySelectorAll<HTMLButtonElement>('button.yt').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const id = btn.dataset.id;
+			const iframe = document.createElement('iframe');
+			iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+			iframe.title = btn.getAttribute('aria-label')?.replace('Play: ', '') ?? 'YouTube video';
+			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+			iframe.allowFullscreen = true;
+			btn.replaceWith(iframe);
+		});
+	});
+</script>
+
+<style>
+	.media {
+		padding-block: var(--space-xl) 0;
+	}
+
+	.hero {
+		padding-bottom: var(--space-xl);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.hero h1 {
+		font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+		max-width: 22ch;
+		margin-bottom: var(--space-md);
+	}
+
+	.hero .sep {
+		color: var(--color-border);
+		font-weight: 400;
+	}
+
+	.lede {
+		font-size: 1.1875rem;
+	}
+
+	.proof {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-lg);
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: var(--color-ink-muted);
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-sm);
+	}
+
+	.button {
+		display: inline-block;
+		border: 1px solid var(--color-border);
+		padding: 0.6rem 1.1rem;
+		font-size: 0.9375rem;
+		text-decoration: none;
+		color: var(--color-ink);
+		background: var(--color-paper);
+	}
+
+	.button.primary {
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+		color: var(--color-paper);
+	}
+
+	.button:hover {
+		opacity: 0.85;
+	}
+
+	.feature {
+		padding-block: var(--space-xl);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.feature:last-child {
+		border-bottom: 0;
+	}
+
+	.capability {
+		color: var(--color-accent);
+		margin-bottom: var(--space-md);
+	}
+
+	.feature-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+	}
+
+	@media (min-width: 820px) {
+		.feature-grid {
+			grid-template-columns: 1.15fr 1fr;
+			align-items: start;
+		}
+	}
+
+	.feature h2 {
+		font-size: 1.6rem;
+	}
+
+	.source {
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		color: var(--color-ink-muted);
+		margin-bottom: var(--space-md);
+	}
+
+	.label {
+		font-weight: 600;
+		margin: var(--space-md) 0 0.25rem;
+	}
+
+	.watch {
+		margin: 0 0 var(--space-md);
+		padding-left: 1.2rem;
+	}
+
+	.watch li {
+		margin-bottom: 0.25rem;
+	}
+
+	.role {
+		margin: 0;
+	}
+
+	.role span {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--color-ink-muted);
+		margin-right: 0.5rem;
+	}
+
+	/* Video facade */
+	.yt,
+	.video :global(iframe),
+	.tile :global(iframe) {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		border: 0;
+	}
+
+	.yt {
+		position: relative;
+		padding: 0;
+		cursor: pointer;
+		background: var(--color-ink);
+		overflow: hidden;
+	}
+
+	.yt img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.play {
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		background: rgba(30, 29, 26, 0.78);
+		transition: background 0.15s;
+	}
+
+	.play::after {
+		content: '';
+		position: absolute;
+		left: 26px;
+		top: 20px;
+		border-style: solid;
+		border-width: 12px 0 12px 19px;
+		border-color: transparent transparent transparent var(--color-paper);
+	}
+
+	.yt:hover .play,
+	.yt:focus-visible .play {
+		background: var(--color-accent);
+	}
+
+	.yt-link {
+		display: inline-block;
+		margin-top: 0.5rem;
+		font-size: 0.875rem;
+	}
+
+	/* Production system */
+	.system-title {
+		font-size: clamp(1.6rem, 3vw, 2.1rem);
+	}
+
+	.flow {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		list-style: none;
+		padding: 0;
+		margin: var(--space-md) 0 var(--space-lg);
+		counter-reset: step;
+	}
+
+	.flow li {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		padding: 0.35rem 0.6rem;
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+	}
+
+	.flow li:not(:last-child)::after {
+		content: '→';
+		margin-left: 0.6rem;
+		color: var(--color-ink-muted);
+	}
+
+	.pull {
+		margin: 0 0 var(--space-lg);
+		padding-left: var(--space-md);
+		border-left: 3px solid var(--color-accent);
+	}
+
+	.pull p {
+		font-family: var(--font-serif);
+		font-size: 1.25rem;
+		line-height: 1.5;
+		margin-bottom: 0.5rem;
+	}
+
+	.pull cite {
+		font-style: normal;
+		font-size: 0.875rem;
+		color: var(--color-ink-muted);
+	}
+
+	.tiles {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+	}
+
+	@media (min-width: 820px) {
+		.tiles {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.tile {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tile .meta {
+		margin-bottom: 0.6rem;
+	}
+
+	.tile figcaption {
+		font-size: 0.9375rem;
+		color: var(--color-ink-muted);
+		margin-top: 0.75rem;
+		line-height: 1.55;
+	}
+
+	.artifact {
+		background: #fff;
+		border: 1px solid var(--color-border);
+		padding: 1rem 1.1rem;
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		flex: 1;
+	}
+
+	.artifact p {
+		margin-bottom: 0.6rem;
+	}
+
+	.artifact p:last-child {
+		margin-bottom: 0;
+	}
+
+	.artifact.small {
+		font-size: 0.875rem;
+	}
+
+	.artifact.serif p:not(.artifact-label) {
+		font-family: var(--font-serif);
+	}
+
+	.artifact-label {
+		font-family: var(--font-mono);
+		font-size: 0.6875rem !important;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--color-ink-muted);
+	}
+
+	.pair {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.6rem;
+		flex: 1;
+	}
+
+	@media (min-width: 520px) {
+		.pair {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.options,
+	.chapters {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.options li {
+		padding: 0.55rem 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.options li:last-child {
+		border-bottom: 0;
+	}
+
+	.options span,
+	.chapters span {
+		display: inline-block;
+		font-family: var(--font-mono);
+		font-size: 0.6875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--color-ink-muted);
+		min-width: 6.5rem;
+	}
+
+	.chapters span {
+		min-width: 3rem;
+	}
+
+	.options .chosen {
+		font-weight: 600;
+		color: var(--color-accent);
+	}
+
+	.options .chosen span::after {
+		content: ' ✓';
+	}
+
+	.chapters li {
+		padding: 0.15rem 0;
+	}
+
+	.thumbs {
+		display: grid;
+		grid-template-columns: 1fr auto 1.6fr;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	.candidates {
+		display: grid;
+		gap: 0.35rem;
+	}
+
+	.candidates img {
+		width: 100%;
+		height: auto;
+		display: block;
+		opacity: 0.8;
+	}
+
+	.thumbs .final {
+		width: 100%;
+		height: auto;
+		display: block;
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	.arrow {
+		color: var(--color-ink-muted);
+		font-size: 1.25rem;
+	}
+
+	.system-link {
+		margin: var(--space-lg) 0 0;
+	}
+
+	/* Credits */
+	.credits-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+	}
+
+	@media (min-width: 820px) {
+		.credits-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.credits h3 {
+		font-size: 1.15rem;
+		margin-top: var(--space-md);
+	}
+
+	.credits h3:first-child {
+		margin-top: 0;
+	}
+
+	.aside {
+		font-family: var(--font-sans);
+		font-weight: 400;
+		font-size: 0.875rem;
+		color: var(--color-ink-muted);
+	}
+
+	.credit-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-md);
+	}
+
+	.credit-list li {
+		display: flex;
+		flex-direction: column;
+		padding: 0.6rem 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.credit-list span {
+		font-size: 0.9375rem;
+		color: var(--color-ink-muted);
+	}
+
+	.credit-list .note {
+		font-size: 0.875rem;
+	}
+
+	.total {
+		font-weight: 600;
+	}
+
+	.contact-line {
+		font-size: 1.1875rem;
+		margin-bottom: var(--space-lg);
+	}
+</style>

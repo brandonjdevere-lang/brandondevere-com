@@ -46,7 +46,7 @@ Then I edit, and that's the part that isn't repetitive. On one recent draft, the
 
 None of that changes what was said. It changes how it lands for someone reading instead of listening. That judgment is the one part of the process I never handed off.
 
-Once the long-form piece is done, the system branches: YouTube description, blog formatting, chapter markers, Shorts captions for five platforms, social posts, thumbnail concepts. Each one adapted for how people actually consume that platform, not copied from the article and reformatted.
+Once the long-form piece is done, the system can branch into a YouTube description, blog formatting, chapter markers, short-form clips with platform-specific captions, social posts, and thumbnail concepts. Each one adapted for how people actually consume that platform, not copied from the article and reformatted.
 
 ## The Proof
 
@@ -54,7 +54,7 @@ The clearest sign the system was working came from something small: a thumbnail.
 
 Early on, thumbnail selection was a list of ideas, mostly borrowed from what other creators do. A face. Bold text. A few competing concepts. A few episodes in, that had formalized into a priority order: a real story asset first, then a documentary scene, then an object, then text, my face only as a last resort.
 
-Then came the episode about a mechanic who fixed in two hours what I'd spent an afternoon failing to diagnose myself. The thumbnail wasn't a photo of me talking about it. It was a photo of the alternator, the same lesson the episode was about: years of experience nobody sees, sitting right there in a used car part.
+Then came an episode about a mechanic with 41 years of experience who replaced my alternator in about two and a half hours. The same job would have taken me weeks. The episode became a story about reps, not talent. Later, listening back to episode 173 of my old podcast made the lesson concrete: I wasn't naturally better at podcasting. I'd simply done it 173 times. The published thumbnail distilled that turn into two words: ‘173RD ATTEMPT.’
 
 A documented system doesn't freeze the standard in place. It captures what worked well enough that the next decision starts from there instead of from scratch.
 
@@ -63,7 +63,7 @@ A documented system doesn't freeze the standard in place. It captures what worke
 - **Less repeated work.** Corrections that used to get re-explained every episode are documented once, so the same lesson never has to be taught twice.
 - **More consistent output.** Every draft starts from the same written standard instead of whatever I happened to remember to mention that day.
 - **A quality bar that holds even as I learn something better.** The thumbnail priority order exists because the system captured what worked and made it the new default, not a one-off decision nobody remembers next time.
-- **One piece of content becomes many, without redoing the work.** A single long-form draft branches into a YouTube description, blog formatting, chapter markers, Shorts captions, social posts, and thumbnail concepts, each built for how people actually use that platform.
+- **One piece of content becomes many, without redoing the work.** A single long-form draft can branch into a YouTube description, blog formatting, chapter markers, short-form clips and captions, social posts, and thumbnail concepts, each built for how people actually use that platform.
 - **Documentation that outlives any one project.** The same documented-thinking-first approach used for the podcast became the foundation for this website: ARCHITECTURE.md exists before the code does, not after.
 - **A system someone else could pick up.** Because the standards live in writing instead of in my head, a collaborator, or a future version of me, could follow them without me being in the room.
 
